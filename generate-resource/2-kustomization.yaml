@@ -1,0 +1,18 @@
+namePrefix: dev-
+nameSuffix: "-001"
+commonLabels:
+  app: bingo
+commonAnnotations:
+  oncallPager: 800-555-1212
+resources:
+  - deployment.yaml
+configMapGenerator:
+- name: example-configmap-1
+  files:
+  - application.properties
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    type: generated
+  annotations:
+    note: generated
